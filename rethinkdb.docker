@@ -1,15 +1,37 @@
 # Install a rethinkdb node. The node will be accessible via HTTP on port 8100. The port can be changed.
 
+# After creating the image you can run:
+#
+#    docker run -i -t rethinkdb
+#
+# Which will run with database storage in /var/rethinkdb on the containers file system
+#
+# To expose a system directory on the host:
+#
+#    First initialize the database directory
+#
+#    docker run -b /local/path:/var/rethinkdb -i -t rethinkdb rethinkdb create -d /var/rethinkdb/db
+#
+#    Then you can run new containers that access that database.
+#
+#    docker run -b /local/path:/var/rethinkdb -i -t rethinkdb
+#
+#    Just don't run multiple containers using that at the same time.
+
 FROM ubuntu
 MAINTAINER Kimbro Staken "kstaken@kstaken.com"
 
 RUN apt-get update
-RUN apt-get install -y python-software-properties python
+RUN apt-get install -y python-software-properties python less
 RUN add-apt-repository ppa:rethinkdb/ppa
 RUN echo "deb http://us.archive.ubuntu.com/ubuntu/ precise universe" >> /etc/apt/sources.list
 RUN apt-get update 
 RUN apt-get install -y rethinkdb
+RUN mkdir /var/rethinkdb
+RUN rethinkdb create -d /var/rethinkdb/db
 
 EXPOSE 8100:8100
 
-CMD ["rethinkdb", "--bind", "all", "--http-port", "8100"] 
+ENTRYPOINT ["rethinkdb"]
+
+CMD ["-d", "/var/rethinkdb/db", "--bind", "all", "--http-port", "8100"] 
