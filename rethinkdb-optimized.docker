@@ -27,15 +27,17 @@
 #    connecting you to an already running container.
 
 FROM ubuntu
-MAINTAINER Kimbro Staken "kstaken@kstaken.com"
+MAINTAINER Kimbro Staken
 
 RUN echo "0.2" > /version
 
-ADD https://raw.github.com/kstaken/dockerfile-examples/master/rethinkdb-install.sh /rethinkdb-install.sh
-RUN /bin/bash /rethinkdb-install.sh
+#ADD https://raw.github.com/kstaken/dockerfile-examples/master/rethinkdb-install.sh /rethinkdb-install.sh
+ADD rethinkdb-install.sh /
+
+#RUN /bin/bash /rethinkdb-install.sh
 
 EXPOSE 8100:8100
 
-ENTRYPOINT ["rethinkdb"]
+#ENTRYPOINT ["rethinkdb"]
 
-CMD ["-d", "/var/rethinkdb/db", "--bind", "all", "--http-port", "8100"] 
+#CMD ["-d", "/var/rethinkdb/db", "--bind", "all", "--http-port", "8100"] 

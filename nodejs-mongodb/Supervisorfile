@@ -1,0 +1,12 @@
+[program:mongodb]
+command=/usr/bin/mongod --config /etc/mongodb.conf
+numprocs=1
+autostart=true
+autorestart=true
+
+[program:node]
+command=/usr/bin/node /var/www/app.js
+numprocs=1
+directory=/var/www/
+autostart=true
+autorestart=true
