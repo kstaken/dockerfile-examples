@@ -29,14 +29,10 @@
 FROM ubuntu
 MAINTAINER Kimbro Staken "kstaken@kstaken.com"
 
-RUN apt-get update
-RUN apt-get install -y python-software-properties python less
-RUN add-apt-repository ppa:rethinkdb/ppa
-RUN echo "deb http://us.archive.ubuntu.com/ubuntu/ precise universe" >> /etc/apt/sources.list
-RUN apt-get update 
-RUN apt-get install -y rethinkdb
-RUN mkdir /var/rethinkdb
-RUN rethinkdb create -d /var/rethinkdb/db
+RUN echo "0.2" > /version
+
+ADD https://raw.github.com/kstaken/dockerfile-examples/master/rethinkdb-install.sh /rethinkdb-install.sh
+RUN /bin/bash /rethinkdb-install.sh
 
 EXPOSE 8100:8100
 
