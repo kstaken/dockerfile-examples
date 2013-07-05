@@ -9,3 +9,4 @@ apt-get install -y rethinkdb
 mkdir /var/rethinkdb
 rethinkdb create -d /var/rethinkdb/db
 apt-get clean
+rm -rf /var/lib/apt/lists/*
