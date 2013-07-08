@@ -21,4 +21,6 @@ RUN mkdir -p -m0755 /var/run/sshd
 
 ADD ./supervisor-salt.conf /etc/supervisor/conf.d/
 
+EXPOSE 4505 4506
+
 CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/supervisord.conf"]  
