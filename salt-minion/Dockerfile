@@ -14,10 +14,10 @@ RUN apt-get update
 RUN dpkg-divert --local --rename --add /sbin/initctl
 RUN ln -s /bin/true /sbin/initctl
 
-RUN apt-get install -y salt-minion
+RUN apt-get install -y salt-minion 
 
 ADD ./supervisor-salt.conf /etc/supervisor/conf.d/
 
-RUN echo 'master: 172.16.42.123' > /etc/salt/minion
+RUN echo 'master: salt-master.local' > /etc/salt/minion
 
 CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/supervisord.conf"]  
