@@ -22,7 +22,7 @@ RUN cd /tmp/apache-couchdb-* ; ./configure && make install
 
 RUN printf "[httpd]\nport = 8101\nbind_address = 0.0.0.0" > /usr/local/etc/couchdb/local.d/docker.ini
 
-EXPOSE 8101:8101
+EXPOSE 8101
 
 CMD ["/usr/local/bin/couchdb"]
 

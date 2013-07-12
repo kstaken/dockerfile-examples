@@ -36,7 +36,7 @@ ADD rethinkdb-install.sh /
 
 #RUN /bin/bash /rethinkdb-install.sh
 
-EXPOSE 8100:8100
+EXPOSE 8100
 
 #ENTRYPOINT ["rethinkdb"]
 
