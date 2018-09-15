@@ -10,5 +10,5 @@ RUN apt-get --yes install nodejs
 RUN mkdir /var/www
 
 ADD app.js /var/www/app.js
-
+EXPOSE 8080
 CMD ["/usr/bin/node", "/var/www/app.js"] 
