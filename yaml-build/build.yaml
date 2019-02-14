@@ -16,5 +16,5 @@ steps:
 - name: gcr.io/cloud-builders/gcloud
   args: ['--help']
 - name: gcr.io/cloud-builders/npm
-  args: ['--help']
+  args: ['help']
 
