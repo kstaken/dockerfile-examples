@@ -3,8 +3,6 @@ steps:
   args: ['--version']
 - name: gcr.io/cloud-builders/docker
   args: ['--version']
-- name: gcr.io/cloud-builders/bazel
-  args: ['--version']
 - name: gcr.io/cloud-builders/go
   args: ['--version']
 - name: gcr.io/cloud-builders/gcloud
@@ -35,3 +33,4 @@ steps:
   args: ['--help']
 - name: gcr.io/cloud-builders/npm
   args: ['--help']
+
