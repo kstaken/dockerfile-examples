@@ -1,3 +1,37 @@
 steps:
 - name: gcr.io/cloud-builders/git
   args: ['--version']
+- name: gcr.io/cloud-builders/docker
+  args: ['--version']
+- name: gcr.io/cloud-builders/bazel
+  args: ['--version']
+- name: gcr.io/cloud-builders/go
+  args: ['--version']
+- name: gcr.io/cloud-builders/gcloud
+  args: ['--version']
+- name: gcr.io/cloud-builders/gradel
+  args: ['--version']
+- name: gcr.io/cloud-builders/maven
+  args: ['--version']
+- name: gcr.io/cloud-builders/kubectl
+  args: ['--version']
+- name: gcr.io/cloud-builders/npm
+  args: ['--version']
+- name: gcr.io/cloud-builders/git
+  args: ['--help']
+- name: gcr.io/cloud-builders/docker
+  args: ['--help']
+- name: gcr.io/cloud-builders/bazel
+  args: ['--help']
+- name: gcr.io/cloud-builders/go
+  args: ['--help']
+- name: gcr.io/cloud-builders/gcloud
+  args: ['--help']
+- name: gcr.io/cloud-builders/gradel
+  args: ['--help']
+- name: gcr.io/cloud-builders/maven
+  args: ['--help']
+- name: gcr.io/cloud-builders/kubectl
+  args: ['--help']
+- name: gcr.io/cloud-builders/npm
+  args: ['--help']
