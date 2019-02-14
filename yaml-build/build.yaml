@@ -15,8 +15,6 @@ steps:
   args: ['--help']
 - name: gcr.io/cloud-builders/gcloud
   args: ['--help']
-- name: gcr.io/cloud-builders/maven
-  args: ['--help']
 - name: gcr.io/cloud-builders/kubectl
   args: ['--help']
 - name: gcr.io/cloud-builders/npm
