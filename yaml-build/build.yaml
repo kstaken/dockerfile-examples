@@ -5,8 +5,6 @@ steps:
   args: ['--version']
 - name: gcr.io/cloud-builders/gcloud
   args: ['--version']
-- name: gcr.io/cloud-builders/maven
-  args: ['--version']
 - name: gcr.io/cloud-builders/kubectl
   args: ['--version']
 - name: gcr.io/cloud-builders/npm
