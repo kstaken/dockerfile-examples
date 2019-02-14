@@ -13,8 +13,6 @@ steps:
   args: ['--help']
 - name: gcr.io/cloud-builders/bazel
   args: ['--help']
-- name: gcr.io/cloud-builders/go
-  args: ['--help']
 - name: gcr.io/cloud-builders/gcloud
   args: ['--help']
 - name: gcr.io/cloud-builders/gradel
